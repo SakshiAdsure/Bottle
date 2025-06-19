@@ -4,15 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Landing Page</title>
+  <title>Responsive Landing Page</title>
 </head>
-<body class="font-sans">
+<body class="font-sans bg-purple-300 overflow-x-hidden">
 
   <!-- Navbar -->
-  <nav class="bg-purple-800 text-white flex flex-col md:flex-row justify-between items-center px-6 py-4">
-    <span class="text-2xl font-bold mb-2 md:mb-0">BottleWorld</span>
+  <nav class="bg-purple-800 text-white px-6 py-4">
+    <div class="flex items-center justify-between">
+      <div class="text-2xl font-bold">BottleWorld</div>
 
-    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-lg">
+      <!-- Hamburger Button (Mobile) -->
+      <button id="menu-btn" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-10 text-lg">
+        <li class="cursor-pointer hover:text-purple-300">Home</li>
+        <li class="cursor-pointer hover:text-purple-300">About</li>
+        <li class="cursor-pointer hover:text-purple-300">Category</li>
+        <li class="cursor-pointer hover:text-purple-300">Contact Us</li>
+      </ul>
+    </div>
+
+    <!-- Mobile Menu -->
+    <ul id="mobile-menu" class="md:hidden mt-4 space-y-2 text-lg hidden">
       <li class="cursor-pointer hover:text-purple-300">Home</li>
       <li class="cursor-pointer hover:text-purple-300">About</li>
       <li class="cursor-pointer hover:text-purple-300">Category</li>
@@ -21,31 +41,40 @@
   </nav>
 
   <!-- Main Content -->
-  <main class="bg-purple-300 flex flex-col lg:flex-row items-center justify-around px-6 py-16 lg:py-32">
+  <main class="flex flex-col-reverse lg:flex-row items-center justify-between px-6 py-12 lg:py-24 max-w-7xl mx-auto">
 
-    <!-- Text Content -->
-    <div class="text-center lg:text-left max-w-lg mb-10 lg:mb-0">
-      <h1 class="text-3xl md:text-4xl font-bold mb-4">The best Bottle in Pune</h1>
-      <p class="mb-6 text-base md:text-lg">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam explicabo voluptatem cum minima eius nesciunt quod veniam facere. Minus, quisquam.
+    <!-- Text Section -->
+    <div class="text-center lg:text-left max-w-xl">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">The best Bottle in Pune</h1>
+      <p class="text-base sm:text-lg mb-6">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam explicabo voluptatem cum minima eius nesciunt quod veniam facere.
       </p>
 
       <div class="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4">
-        <button class="bg-purple-800 text-white px-5 py-2 rounded-2xl hover:text-slate-900 hover:bg-fuchsia-300 hover:border-2 hover:border-purple-800 transition">
+        <button class="bg-purple-800 text-white px-6 py-2 rounded-2xl hover:text-slate-900 hover:bg-fuchsia-300 hover:border-2 hover:border-purple-800 transition">
           Buy now
         </button>
-        <button class="bg-purple-800 text-white px-5 py-2 rounded-2xl hover:text-slate-900 hover:bg-fuchsia-300 hover:border-2 hover:border-purple-800 transition">
+        <button class="bg-purple-800 text-white px-6 py-2 rounded-2xl hover:text-slate-900 hover:bg-fuchsia-300 hover:border-2 hover:border-purple-800 transition">
           Visit More
         </button>
       </div>
     </div>
 
-    <!-- Image -->
-    <div class="w-full max-w-sm flex justify-center">
+    <!-- Image Section -->
+    <div class="w-full max-w-xs mb-8 lg:mb-0">
       <img src="bottle.png" alt="bottle img" class="w-full h-auto object-contain" />
     </div>
-    
+
   </main>
 
+  <!-- JS for Hamburger Menu -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
 </body>
 </html>
