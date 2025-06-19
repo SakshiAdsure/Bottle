@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Landing Page</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Landing Page</title>
 </head>
-<body>
-    <nav class="bg-purple-800 text-white flex justify-between font-sans">
+<body class="font-sans">
 
-        <span class="text-xl flex items-center mx-3 font-bold">
-            BottleWorld
-        </span>
+  <!-- Navbar -->
+  <nav class="bg-purple-800 text-white flex flex-col md:flex-row justify-between items-center px-6 py-4">
+    <span class="text-2xl font-bold mb-2 md:mb-0">BottleWorld</span>
 
-        <!-- <img src="https://randomuser.me/api/portraits/men/75.jpg" class="h-12 pt-3 px-3 rounded-3xl" alt="logo"> -->
-        <ul class="px-28 py-4 flex space-x-16 justify-end">
-            <li class="cursor-pointer">Home</li>
-            <li class="cursor-pointer">About</li>
-            <li class="cursor-pointer">Category</li>
-            <li class="cursor-pointer">Contact Us</li>
-        </ul>
-    </nav>
+    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-10 text-lg">
+      <li class="cursor-pointer hover:text-purple-300">Home</li>
+      <li class="cursor-pointer hover:text-purple-300">About</li>
+      <li class="cursor-pointer hover:text-purple-300">Category</li>
+      <li class="cursor-pointer hover:text-purple-300">Contact Us</li>
+    </ul>
+  </nav>
 
-    <main class=" bg-purple-300 flex justify-around ">
-        <div class="main py-48 pl-24">
-            <div class="text-3xl font-sans">
-                The best Bottle in Pune
-            </div>
+  <!-- Main Content -->
+  <main class="bg-purple-300 flex flex-col lg:flex-row items-center justify-around px-6 py-16 lg:py-32">
 
-            <p class="py-3 w-1/3 font-sans">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam explicabo voluptatem cum minima eius nesciunt quod veniam facere. Minus, quisquam.</p>
+    <!-- Text Content -->
+    <div class="text-center lg:text-left max-w-lg mb-10 lg:mb-0">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4">The best Bottle in Pune</h1>
+      <p class="mb-6 text-base md:text-lg">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam explicabo voluptatem cum minima eius nesciunt quod veniam facere. Minus, quisquam.
+      </p>
 
-            <div class="botton">
-                <button class="bg-purple-800 text-white px-3 py-2 rounded-2xl hover:text-slate-900 hover:bg-fuchsia-300 hover:border-2 hover:border-purple-800 font-sans mx-2">
-                    Buy now
-                </button>
-                <button class="bg-purple-800 text-white px-3 py-2 rounded-2xl hover:text-slate-900 hover:bg-fuchsia-300 hover:border-2 hover:border-purple-800 font-sans mx-2">
-                    Visit More
-                </button>
-            </div>
-        </div>
+      <div class="flex flex-col sm:flex-row sm:justify-center lg:justify-start gap-4">
+        <button class="bg-purple-800 text-white px-5 py-2 rounded-2xl hover:text-slate-900 hover:bg-fuchsia-300 hover:border-2 hover:border-purple-800 transition">
+          Buy now
+        </button>
+        <button class="bg-purple-800 text-white px-5 py-2 rounded-2xl hover:text-slate-900 hover:bg-fuchsia-300 hover:border-2 hover:border-purple-800 transition">
+          Visit More
+        </button>
+      </div>
+    </div>
 
-        <div class="flex items-center mx-">
-            <img src="bottle.png"  alt="bottle img">
-        </div>
-    </main>
+    <!-- Image -->
+    <div class="w-full max-w-sm flex justify-center">
+      <img src="bottle.png" alt="bottle img" class="w-full h-auto object-contain" />
+    </div>
+    
+  </main>
+
 </body>
 </html>
-
-<!-- class="min-h-48" -->
